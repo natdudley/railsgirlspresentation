@@ -283,7 +283,7 @@
 				<section>
 					<p>It looks pretty plain right now, but click around and explore what you've built.</p>
 					<p>Once you've had a play, go back to your Nitrous.io editor.</p>
-					<p>Stop the server by clicking in the terminal and typing CTRL + C.</p>
+					<p>Stop the server by clicking in the terminal and typing <b>CTRL + C</b>.</p>
 				</section>
 				<!-- Design/Front-end -->
 				<section>
@@ -386,7 +386,7 @@ th { border-bottom: 1px solid #DDD; }</code></pre>
 					<pre><code>rails server</code></pre>
 					<p>Open the preview on Port:3000 again.</p>
 					<p>Don't forget to add '/ideas' to the end of the URL</p>
-					<p>When you're finished looking, stop the server again by hitting CTRL + c.</p>
+					<p>When you're finished looking, stop the server again by hitting <b>CTRL + C</b>.</p>
 				</section>
 				<!-- Images -->
 				<section>
@@ -430,6 +430,11 @@ gem 'carrierwave'</code></pre>
 					<pre><code><%= f.file_field :picture %></code></pre>
 					<p>This changes the code from asking for a text input to asking for a file input, which makes it easier for our users to upload an image.</p>
 				</section>
+        <section>
+            <p>In the terminal, start the server again by typing:</p>
+            <pre><code>rails server</code></pre>
+            <p>Refresh the browser window you're viewing your app in to see the changes, and add a new idea.</p>
+        </section>
 				<section>
 					<section>
 						<p>Did you get an error?</p>
@@ -440,11 +445,6 @@ gem 'carrierwave'</code></pre>
 						<p>In <code>app/views/ideas/_form.html.erb</code>, change <code><%= form_for(@idea) do |f| %></code> to:</p>
 						<pre><code><%= form_for @idea, :html => {:multipart => true} do |f| %></code></pre>
 					</section>
-				</section>
-				<section>
-						<p>In the terminal, start the server again by typing:</p>
-						<pre><code>rails server</code></pre>
-						<p>Refresh the browser window you're viewing your app in to see the changes, and add a new idea.</p>
 				</section>
 				<section>
 					<p>You'll notice that the image didn't display - instead, it showed the path to the image. Let's fix that.</p>
