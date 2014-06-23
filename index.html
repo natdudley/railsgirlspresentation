@@ -17,9 +17,11 @@
 		<link rel="stylesheet" href="assets/css/reveal.min.css">
 		<link rel="stylesheet" href="assets/css/theme/bootstrap.css" id="theme">
 		<link rel="stylesheet" href="assets/css/custom.css">
-		
+
+        <script src="http://yandex.st/highlightjs/8.0/highlight.min.js"></script>
+
 		<!-- For syntax highlighting -->
-		<link rel="stylesheet" href="assets/css/zenburn.css">
+        <link href="assets/css/prism.css" rel="stylesheet" />
 
 		<!-- If the query includes 'print-pdf', use the PDF print sheet -->
 		<script>
@@ -104,7 +106,7 @@
 					</section>
 					<section data-background="images/halftone.png" data-background-repeat="repeat" data-background-size="100px">
 						<p>When you first create your project, you've got the only copy of it. This is bad, because if something happened to your computer, you might lose everything you've made.</p>
-						<p>Committing your project using Github (via Git) means you've got a backup copy just in case anything goes wrong.</p> 
+						<p>Committing your project using Github (via Git) means you've got a backup copy just in case anything goes wrong.</p>
 					</section>
 					<section data-background="images/halftone.png" data-background-repeat="repeat" data-background-size="100px">
 						<p>The other great thing about this is that you can always go back to an old version of your project, so if you make a mistake, or change your mind about something you've done, you can easily fix it.</p>
@@ -133,7 +135,7 @@
 				</section> 
 				<section data-background="images/brushed.png" data-background-repeat="repeat" data-background-size="100px">
 					<p>You'll receive a confirmation email. Click the confirmation link.</p>
-					<p>You will be taken back to Nitrous.io. Click <strong>'Open Dashboard'</strong></p>
+					<p>You will be taken back to Nitrous.io. Click <strong>'Open Dashboard'</strong>.</p>
 				</section>	
 				<section data-background="images/brushed.png" data-background-repeat="repeat" data-background-size="100px">
 						<p>We're coding using Ruby on Rails, so <strong>pick the Ruby/Rails template.</strong></p>
@@ -142,15 +144,16 @@
 							<li>Tell Nitrous where you are.</li>
 						</ul>
 						<p>Leave the GitHub repo box blank.</p>
+                        <p>Click <strong>'Create box'</strong>.</p>
 				</section>
 				<section data-background="images/brushed.png" data-background-repeat="repeat" data-background-size="100px">
 					<p>Click <strong>'Connect GitHub'</strong>.</p>
 					<p>You'll be asked to authorise Nitrous.io to access your GitHub account. <br>
-					<strong>Click 'Authorize Application'.</strong></p>
-					<p>Then, in Nitrous.io, click <strong>'Next'</strong>.
+					<strong>Click 'Authorize Application'</strong>.</p>
+					<p>Then, in Nitrous.io, click <strong>'Next'</strong>.</p>
 				</section>
 				<section data-background="images/brushed.png" data-background-repeat="repeat" data-background-size="100px">
-						<p>We don't need a special app (we'll use your browser), but later,<br> you might like use the Nitrous app with a text editor instead. <br>Or, you might like to <a href="http://guides.railsgirls.com/install/" target="_blank">set up a full installation</a>.</p>
+						<p>We don't need a special app (we'll use your browser), but later,<br> you might like to use the Nitrous app with a text editor instead. <br>Or, you might like to <a href="http://guides.railsgirls.com/install/" target="_blank">set up a full installation</a>.</p>
 						<p>Click the <strong>'Take me to my box'</strong> button.</p>
 						<p>You're now ready to start making your app!</p>
 
@@ -167,40 +170,38 @@
 				<section data-background="images/brushed.png" data-background-repeat="repeat" data-background-size="100px">
 					<p>We need to create some folders to store our app in.</p>
 					<p>In the terminal type:</p>
-					<pre><code>mkdir projects</code></pre>
+					<pre><code class="language-bash">mkdir projects</code></pre>
 					<p>The 'mkdir' command means 'make directory'. So, we've made a directory called 'projects'.
 					</p>
 				</section>
 				<section data-background="images/brushed.png" data-background-repeat="repeat" data-background-size="100px">
 					<p>Now, we need to access the directory we made.</p>
 					<p>In the terminal type:</p>
-					<pre><code>cd projects</code></pre>
+					<pre><code class="language-bash">cd projects</code></pre>
 					<p>The 'cd' command means 'change directory'. We're now in the 'projects' directory.</p>
 					<p>The 'projects' directory is usually used to store all your different coding projects.</p>
 				</section>
 				<section data-background="images/brushed.png" data-background-repeat="repeat" data-background-size="100px">
 					<p>We're going to make an app called Rails Girls.</p>
 					<p>In the terminal type:</p>
-					<pre><code>rails new railsgirls</code></pre>
+					<pre><code class="language-bash">rails new railsgirls</code></pre>
 					<p>The 'rails new' command creates a new rails app.</p>
 				</section>
 				<section data-background="images/brushed.png" data-background-repeat="repeat" data-background-size="100px">
 					<p>Let's change directory into our new app.</p>
 					<p>In the terminal type:</p>
-					<pre><code>cd railsgirls</code></pre>
+					<pre><code class="language-bash">cd railsgirls</code></pre>
 				</section>
 				<!-- Test Server -->			
 				<section data-background="images/brushed.png" data-background-repeat="repeat" data-background-size="100px">
-					<p>To check we've set up our app correctly, let's start the server.
-					</p>
+					<p>To check we've set up our app correctly, let's start the server.</p>
 					<p>In the terminal, type:</p>
-					<pre><code>rails server</code></pre>
+					<pre><code class="language-bash">rails server</code></pre>
 				</section>
 				<section data-background="images/brushed.png" data-background-repeat="repeat" data-background-size="100px">
-					<p>Our server will now start up. You'll notice that the terminal now looks a bit different. Instead of our directory name, it just shows this:
-					</p>
-					<pre><code>$              </code></pre>
-					<p>While the server is running in this page of the terminal, we can't type any other commands in. We can open a second tab in the terminal by clicking the <strong>'+'</strong> button.
+					<p>Our server will now start up. You'll notice that the terminal now looks a bit different. Instead of our directory name, it just shows this:</p>
+					<pre><code class="language-bash">$              </code></pre>
+					<p>While the server is running in this page of the terminal, we can't type any other commands in. We can open a second tab in the terminal by clicking the <strong>'+'</strong> button.</p>
 				</section>
 				<section data-background="images/brushed.png" data-background-repeat="repeat" data-background-size="100px">
 					<p>Let's check to make sure our server is running properly.</p>
@@ -208,12 +209,9 @@
 					<p><img width="600" src="images/serverpreview.png"></p>
 				</section>
 				<section data-background="images/brushed.png" data-background-repeat="repeat" data-background-size="100px">
-					<p>A new tab will open in your browser.
-					</p>
-					<p>This should say "Welcome Aboard".
-					</p>
-					<p><strong>Don't have this? Get a coach to help check it out.</strong>
-					</p>
+					<p>A new tab will open in your browser.</p>
+					<p>This should say "Welcome Aboard".</p>
+					<p><strong>Don't have this? Get a coach to help check it out.</strong></p>
 				</section>
 				<section data-background="images/brushed.png" data-background-repeat="repeat" data-background-size="100px">
 					<p>Great. We now have a working server. Let's shut it down (for now) and start work.</p>
@@ -257,11 +255,11 @@
 					<p>Let's take a look at what's in the app we just set up.
 					</p>
 					<p>In the terminal, type:</p>
-					<pre><code>ls</code></pre>
+					<pre><code class="language-bash">ls</code></pre>
 				</section>
 				<section data-background="images/brushed.png" data-background-repeat="repeat" data-background-size="100px">
-					<p>You'll see a list of all the different things in your new app.</p>
-					<pre><code>app  bin  config  config.ru  db  Gemfile  Gemfile.lock  lib  localhost:3000  log  public  Rakefile  README.md  README.rdoc  test  tmp  vendor </code></pre>
+					<p>You'll see a list of all the different things in your new app:</p>
+					<pre><code class="language-bash">app  bin  config  config.ru  db  Gemfile  Gemfile.lock  lib  log  public  Rakefile  README.rdoc  test  tmp  vendor</code></pre>
 				</section>
 				<section class="title" data-background="images/red-hearts.png">
 					<h2>Let's get building.</h2>
@@ -272,7 +270,7 @@
 				</section>
 				<section data-background="images/brushed.png" data-background-repeat="repeat" data-background-size="100px">
 					<p>In the terminal, type:<p>
-					<pre><code>rails generate scaffold idea name:string description:text picture:string</code></pre>
+					<pre><code class="language-bash">rails generate scaffold idea name:string description:text picture:string</code></pre>
 				</section>
 				<section data-background="images/brushed.png" data-background-repeat="repeat" data-background-size="100px">
 					<p>You've now created a concept (model) called 'idea' that includes:</p> 
@@ -296,17 +294,17 @@
 				<section data-background="images/brushed.png" data-background-repeat="repeat" data-background-size="100px">
 					<p>When we add new concepts like these to our app, we need to update our database. This is called a migration.</p>
 					<p>In the terminal, type:</p>
-					<pre><code>rake db:migrate</code></pre>
+					<pre><code class="language-bash">rake db:migrate</code></pre>
 				</section>
 				<section data-background="images/brushed.png" data-background-repeat="repeat" data-background-size="100px">
 					<p>There's also a command to reverse the migration if you make a mistake: </p>
-					<pre><code>rake db:rollback</code></pre>
+					<pre><code class="language-bash">rake db:rollback</code></pre>
 					<p>If you've heard developers talking about a 'rollback', this is what they mean.</p>
 				</section>
 				<section data-background="images/brushed.png" data-background-repeat="repeat" data-background-size="100px">
 					<p>Let's restart our server and see what that made.</p>
 					<p>In the terminal, type:</p>
-					<pre><code>rails server</code></pre>
+					<pre><code class="language-bash">rails server</code></pre>
 				</section>
 				<section data-background="images/brushed.png" data-background-repeat="repeat" data-background-size="100px">
 					<p><strong>Open the preview on Port:3000</strong> again.</p>
@@ -325,7 +323,7 @@
 					<h4>(or, the front-end)</h4>
 				</section>
 				<section data-background="images/brushed.png" data-background-repeat="repeat" data-background-size="100px">	
-					<p>In a Ruby on Rails application, the user interface (what someone visiting the website will see), is often written in HTML with Embedded Ruby (ERB) code.</p>
+					<p>In a Ruby on Rails application, the user interface (what someone visiting the website will see) is often written in HTML with Embedded Ruby (ERB) code.</p>
 					<p>This code is contained in a specific directory called ‘views’, located in the app folder of your Rails application directory.</p>
 				</section>
 				<section data-background="images/brushed.png" data-background-repeat="repeat" data-background-size="100px">
@@ -339,8 +337,8 @@
 				<section data-background="images/brushed.png" data-background-repeat="repeat" data-background-size="100px">
 					<p>If an = sign accompanies the angle brackets <code><%=</code> and <code>%></code>, <br>then the contents are executed and rendered on the page.</p>
 					<p>For example, if you had 25 active ideas in your application, the code:</p>
-					<pre><code>There are currently <%= Idea.count %> active ideas</code></pre> 
-					<p>would render as: There are currently 25 active ideas.</p>
+					<pre><code class="language-bash">There are currently &lt;%= Idea.count %> active ideas</code></pre>
+					<p>would render as: There are currently 25 active ideas</p>
 				</section>
 				<section data-background="images/brushed.png" data-background-repeat="repeat" data-background-size="100px">
 					<p>Earlier, we ran a scaffold command to set up our app. <br>As well as creating our model, it also created a controller, and a view.</p>
@@ -354,8 +352,8 @@
 					<p>In Nitrous.io, the left side of the page has a tree menu. Use this to open <code>app/views/layouts/application.html.erb</code> in your text editor. <br>This is a default layout file. You can use this to create default formatting for your app.
 					</p>
 					<p>Find the line <code><%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %></code>. Above this line, add this code:</p>
-					<pre><code><link rel="stylesheet" href="//railsgirls.com/assets/bootstrap.css" />
-<link rel="stylesheet" href="//railsgirls.com/assets/bootstrap-theme.css" /></code></pre>
+					<pre><code class="language-markup">&lt;link rel="stylesheet" href="//railsgirls.com/assets/bootstrap.css" />
+&lt;link rel="stylesheet" href="//railsgirls.com/assets/bootstrap-theme.css" /></code></pre>
 
 				</section>	
 				<section data-background="images/brushed.png" data-background-repeat="repeat" data-background-size="100px">
@@ -363,47 +361,47 @@
 				</section>
 				<section data-background="images/brushed.png" data-background-repeat="repeat" data-background-size="100px">
 					<p>Replace <code><%= yield %></code> with:</p>
-					<pre><code> <div class="container">
-  <%= yield %>
-</div></code></pre>
+					<pre><code class="language-markup">&lt;div class="container">
+  &lt;%= yield %>
+&lt;/div></code></pre>
 					<p>The <code>&lt;div&gt;</code> tag is used to divide your code into parts.</p>
-					<p>You can also assign a class. This allows you to apply the same styling <br>to all the things with this class. We've called ours 'container'.</p>
+					<p>You can also assign a css class. This allows you to apply the same styling <br>to all the things with this class. We've called ours 'container'.</p>
 					<p><code><%= yield %></code> is a way of adding the unique content we'll have on each page into the container. This helps make sure our styling is consistent.
 				</section>
 				<section data-background="images/brushed.png" data-background-repeat="repeat" data-background-size="100px">
-					<p>We want to have a navigation bar at the top of our page, so that people using our app can find their way around. We also want to have a footer at the bottom of the page. <br>In the same file, under <code>&lt;body&gt;</code> add:</p>
-					<pre><code><nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-  <div class="container">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="/">The Idea app</a>
-    </div>
-    <div class="collapse navbar-collapse">
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="/ideas">Ideas</a></li>
-      </ul>
-    </div>
-  </div>
-</nav></code></pre>
+					<p>We want to have a navigation bar at the top of our page, so that people using our app can find their way around. We also want to have a footer at the bottom of the page. <br>In the same file, under <code>&lt;body&gt;</code>, add:</p>
+					<pre style="height:400px;"><code class="language-markup">&lt;nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+  &lt;div class="container">
+    &lt;div class="navbar-header">
+      &lt;button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        &lt;span class="sr-only">Toggle navigation&lt;/span>
+        &lt;span class="icon-bar">&lt;/span>
+        &lt;span class="icon-bar">&lt;/span>
+        &lt;span class="icon-bar">&lt;/span>
+      &lt;/button>
+      &lt;a class="navbar-brand" href="/">The Idea app&lt;/a>
+    &lt;/div>
+    &lt;div class="collapse navbar-collapse">
+      &lt;ul class="nav navbar-nav">
+        &lt;li class="active">&lt;a href="/ideas">Ideas&lt;/a>&lt;/li>
+      &lt;/ul>
+    &lt;/div>
+  &lt;/div>
+&lt;/nav></code></pre>
 				<p>Make sure you scroll down to get all the code! This is the navigation bar.</p>
 				</section>
 				<section data-background="images/brushed.png" data-background-repeat="repeat" data-background-size="100px">
 					<p>Let's add the footer too. Before <code>&lt;/body&gt;</code>, add:</p>
-					<pre><code><footer>
-  <div class="container">
+					<pre><code class="language-markup">&lt;footer>
+  &lt;div class="container">
     Rails Girls 2014
-  </div>
-</footer>
-<script src="//railsgirls.com/assets/bootstrap.js"></script></code></pre>
+  &lt;/div>
+&lt;/footer>
+&lt;script src="//railsgirls.com/assets/bootstrap.js">&lt;/script></code></pre>
 				</section>
 				<section data-background="images/brushed.png" data-background-repeat="repeat" data-background-size="100px">
 					<p>Finally, we're going to make some changes to the way our ideas display. We want to space them out a bit. Open <code>app/assets/stylesheets/application.css</code> <br>and at the bottom, add:
-					<pre><code>body { padding-top: 100px; }
+					<pre><code class="language-css">body { padding-top: 100px; }
 footer { margin-top: 100px; }
 table, td, th { vertical-align: middle; border: none; }
 th { border-bottom: 1px solid #DDD; }</code></pre>
@@ -417,9 +415,9 @@ th { border-bottom: 1px solid #DDD; }</code></pre>
 				</section>
 				<section data-background="images/brushed.png" data-background-repeat="repeat" data-background-size="100px">
 					<p>Let's start the server again, and check out our progress. In the terminal, type:</p>
-					<pre><code>rails server</code></pre>
+					<pre><code class="language-bash">rails server</code></pre>
 					<p>Open the preview on Port:3000 again.</p>
-					<p>Don't forget to add '/ideas' to the end of the URL</p>
+					<p>Don't forget to add '/ideas' to the end of the URL.</p>
 					<p>When you're finished looking, stop the server again by hitting <strong>Ctrl+C</strong>.</p>
 				</section>
 				<!-- Images -->
@@ -427,33 +425,32 @@ th { border-bottom: 1px solid #DDD; }</code></pre>
 					<h2>Images</h2>
 				</section>
 				<section data-background="images/brushed.png" data-background-repeat="repeat" data-background-size="100px">
-					<p>In our app, we want to be upload images. At the moment, we can't do that.</p>
+					<p>In our app, we want to be able to upload images. At the moment, we can't do that.</p>
 					<p>Rails has lots of useful add ons you can use. In programming, these are usually called libraries, but in Rails, we call them gems. Gems contain pre-written code and help to reduce errors and duplication in your code.</p>
 				</section> 
 				<section data-background="images/brushed.png" data-background-repeat="repeat" data-background-size="100px">
 					<p>In your project menu, you'll see something called <code>Gemfile</code>. <br>This has all the gems that came with the application we created.</p>
-					<p>Open gemfile so you can edit it in the text editor. Under the line, add:</p>
-					<pre><code>gem 'sqlite3'
-gem 'carrierwave'</code></pre>
-					<p>The <code>sqlite3 gem</code> interfaces with our database, and <code>carrierwave</code> <br>makes it easier to upload images.</p>
+					<p>Open gemfile so you can edit it in the text editor. Under the line <code>gem 'sqlite3'</code>, add:</p>
+					<pre><code class="language-ruby">gem 'carrierwave'</code></pre>
+					<p>The <code>carrierwave</code> gem <br>makes it easier to upload images.</p>
 				</section>
 				<section data-background="images/brushed.png" data-background-repeat="repeat" data-background-size="100px">
 					<p>In the terminal, run:</p>
-					<pre><code>bundle</code></pre>
+					<pre><code class="language-bash">bundle</code></pre>
 					<p>This runs Rails' Bundler software, which fetches the gems you have <br>added from the <a href="https://rubygems.org" target="_blank">https://rubygems.org</a> website, and installs them.</p>
 				</section>
 				<section data-background="images/brushed.png" data-background-repeat="repeat" data-background-size="100px">
 					<p>Now, we can generate the code for uploading pictures. In the terminal, type:</p>
-					<pre><code>rails generate uploader Picture</code></pre>
+					<pre><code class="language-bash">rails generate uploader Picture</code></pre>
 				</section>
 				<section data-background="images/brushed.png" data-background-repeat="repeat" data-background-size="100px">
 					<p>Now, we need to customise the form we use for editing and uploading ideas.</p>
 					<p>We're using the same bit of code to edit and upload. This is found in <code>app/models/idea.rb</code>.</p>
-					<p>This code snippet is used in both <code>edit.html.erb</code> and <code>new.html.erb</code>, as the two forms are basically identical. This saves us some work! If you look at either of those pages, <br>rather than form code, it just says <code><%= render 'form' %></code>.</p>
+					<p>This code snippet is used in both, <code>edit.html.erb</code> and <code>new.html.erb</code>, as the two forms are basically identical. This saves us some work! If you look at either of those pages, <br>rather than form code, it just says <code><%= render 'form' %></code></p>
 				</section>	
 				<section data-background="images/brushed.png" data-background-repeat="repeat" data-background-size="100px">
 					<p>Open <code>app/models/idea.rb</code>. Under the line <code>class Idea < ActiveRecord::Base</code>, add:
-					<pre><code>mount_uploader :picture, PictureUploader</code></pre>
+					<pre><code class="language-ruby">mount_uploader :picture, PictureUploader</code></pre>
 				</section>
 				<section data-background="images/brushed.png" data-background-repeat="repeat" data-background-size="100px">
 					<p>Open <code>app/views/ideas/_form.html.erb</code>. This file creates our form HTML.</p>
@@ -461,12 +458,12 @@ gem 'carrierwave'</code></pre>
 				</section>
 				<section data-background="images/brushed.png" data-background-repeat="repeat" data-background-size="100px">
 					<p>Find <code><%= f.text_field :picture %></code> and change it to:</p>
-					<pre><code><%= f.file_field :picture %></code></pre>
+					<pre><code class="language-ruby"><%= f.file_field :picture %></code></pre>
 					<p>This changes the code from asking for a text input to asking for a file input, which makes it easier for our users to upload an image.</p>
 				</section>
 				<section data-background="images/brushed.png" data-background-repeat="repeat" data-background-size="100px">
 						<p>In the terminal, start the server again by typing:</p>
-						<pre><code>rails server</code></pre>
+						<pre><code class="language-bash">rails server</code></pre>
 						<p>Refresh the browser window you're viewing your app in to see the changes, <br>and add a new idea.</p>
 				</section>
 				<section data-background="images/brushed.png" data-background-repeat="repeat" data-background-size="100px">
@@ -477,13 +474,13 @@ gem 'carrierwave'</code></pre>
 					</section>
 					<section data-background="images/halftone.png" data-background-repeat="repeat" data-background-size="100px">
 						<p>In <code>app/views/ideas/_form.html.erb</code>, change <code><%= form_for(@idea) do |f| %></code> to:</p>
-						<pre><code><%= form_for @idea, :html => {:multipart => true} do |f| %></code></pre>
+						<pre><code class="language-ruby"><%= form_for @idea, :html => {:multipart => true} do |f| %></code></pre>
 					</section>
 				</section>
 				<section data-background="images/brushed.png" data-background-repeat="repeat" data-background-size="100px">
 					<p>You'll notice that the image didn't display; instead, it showed the path to the image. <br>Let's fix that.</p>
 					<p>Open <code>app/views/ideas/show.html.erb</code> and change <code><%= @idea.picture %></code> to:
-					<pre><code><%= image_tag(@idea.picture_url, :width => 600) if @idea.picture.present? %></code></pre>
+					<pre><code class="language-ruby"><%= image_tag(@idea.picture_url, :width => 600) if @idea.picture.present? %></code></pre>
 					<p>Refresh your browser, and you should now see the image.</p>
 				</section>
 				<section data-background="images/brushed.png" data-background-repeat="repeat" data-background-size="100px">	
@@ -495,7 +492,7 @@ gem 'carrierwave'</code></pre>
 					<section data-background="images/halftone.png" data-background-repeat="repeat" data-background-size="100px">
 						<p>Let's take a closer look at <code>app/views/ideas/show.html.erb</code>.</p>
 						<p>
-						In the code <code><%= @idea.picture %></code>, @idea is what we call an 'instance variable'. Instance variables are start with an @ symbol. Each view file (what we're looking at now), has a corresponding controller action, where the instance variables' are set.</p>
+						In the code <code><%= @idea.picture %></code>, @idea is what we call an 'instance variable'. Instance variables start with an @ symbol. Each view file (what we're looking at now), has a corresponding controller action, where the instance variables are set.</p>
 						<p>In our code, @idea is set in the ‘show’ action of the Ideas controller. It's set with the code <code>@idea = Idea.find(params[:id])</code>.</p> 
 						<p>This allows us to use it in the view <code>show.html.erb</code>. It uses the Rails 'Find' method to get the ideas for our app from our database.</p> 
 					</section>
@@ -529,20 +526,20 @@ gem 'carrierwave'</code></pre>
 					<p><code>POST /ideas</code> will create a new idea.</p>
 				</section>
 				<section data-background="images/brushed.png" data-background-repeat="repeat" data-background-size="100px">
-					<p>We're going to change some of the routes we have set up. When you open the Localhost:3000 page, it still has the Ruby 'Welcome Aboard' message. <br>We had to manually go to /index.</p>
+					<p>We're going to change some of the routes we have set up. When you open your application page, it still has the Ruby 'Welcome Aboard' message. <br>We had to manually go to /ideas.</p>
 					<p>Open <code>config/routes.rb</code>. After the first line, add:</p>
-					<pre><code>root :to => redirect('/ideas')</code></pre>
+					<pre><code class="language-ruby">root :to => redirect('/ideas')</code></pre>
 					<p>This changes the default page (root) that is returned when a browser requests your app to the /ideas page. Try it out now (don't forget to save your changes first, and <br>restart the server if you've stopped it).</p>
 				</section>	
 				<section data-background="images/brushed.png" data-background-repeat="repeat" data-background-size="100px">
-					<p>Lastly, we're doing to add a static page to our app. This one is going to <br>provide information about the author of the app - you!</p>
+					<p>Lastly, we're going to add a static page to our app. This one is going to <br>provide information about the author of the app - you!</p>
 					<p>In the terminal, type:</p>
-					<pre><code>rails generate controller pages info</code></pre>
+					<pre><code class="language-bash">rails generate controller pages info</code></pre>
 				</section>
 				<section data-background="images/brushed.png" data-background-repeat="repeat" data-background-size="100px">
 					<p>This created a new folder called 'pages', which you can find under <code>app/views</code>.</p>
 					<p>In that folder, you'll see a page called <code>info.html.erb</code>. Open it up.</p>
-					<p>You can customise the information in this page. <br>If you add /pages/info to your app URL now, you'll see this page.</p>
+					<p>You can customise the information in this page. <br>If you add <code>/pages/info</code> to your app URL now, you'll see this page.</p>
 				</section>
 				<section class="title" data-background="images/red-hearts.png">
 					<h2>Push your app to GitHub</h2>
@@ -550,9 +547,9 @@ gem 'carrierwave'</code></pre>
 				<section data-background="images/brushed.png" data-background-repeat="repeat" data-background-size="100px">							<p>Earlier, you created a GitHub account.</p>
 					<p>Now, we're going to add your new app to GitHub.</p>
 				</section>
-				<section data-background="images/brushed.png" data-background-repeat="repeat" data-background-size="100px">	
+				<section data-background="images/brushed.png" data-background-repeat="repeat" data-background-size="100px">
 					<p>Open the GitHub website and log in.</p>
-					<p>Click the <a href="https://github.com/new" target="_blank"><img src="images/newrepo.png"></a> button.</p>			
+					<p>Click the <a href="https://github.com/new" target="_blank"><img src="images/newrepo.png"></a> button.</p>
 				</section>
 				<section data-background="images/brushed.png" data-background-repeat="repeat" data-background-size="100px">
 					<p>Give the repository a name, such as rails-girls.</p>
@@ -563,37 +560,37 @@ gem 'carrierwave'</code></pre>
 				<section data-background="images/brushed.png" data-background-repeat="repeat" data-background-size="100px">
 					<p>This creates a new repository (a place to store your app). It then initializes the repository, which allows you to record revisions of the project, and finally, it creates a read-me document. In most projects, this is where you'd write a brief description of the project, so that other people understand what you're building.</p>
 				</section>
-				<section data-background="images/brushed.png" data-background-repeat="repeat" data-background-size="100px">		
+				<section data-background="images/brushed.png" data-background-repeat="repeat" data-background-size="100px">
 					<p>Go back to Nitrous.io. Make sure you're still in your project directory.</p>
 					<p>You can check this by looking at the terminal. It should show something like this:</p>
 					<pre><code>action@railsgirls-rails-98616:~/projects/railsgirls(master*)$</code></pre>
 					<p>If you're not, use the <code>cd</code> command you learned earlier to change back into that directory.</p>
 				</section>
-				<section data-background="images/brushed.png" data-background-repeat="repeat" data-background-size="100px">		
+				<section data-background="images/brushed.png" data-background-repeat="repeat" data-background-size="100px">
 					<p>In the terminal, type:</p>
 					<pre><code>git init</code></pre>
 					<p>This initializes your local git repository. Remember: git runs on your computer; GitHub stores your code online.</p>
 				</section>
-				<section data-background="images/brushed.png" data-background-repeat="repeat" data-background-size="100px">		
+				<section data-background="images/brushed.png" data-background-repeat="repeat" data-background-size="100px">
 					<p>Let's add your code to your local repository. In the terminal, type:</p>
 					<pre><code>git add .</code></pre>
 					<p>The <code>.</code> means all files. So, this command will get us ready to add all our files to our computer's repository.</p>
 					<p>Git has an intermediary stage before it saves any changes. This is called 'staging', and it allows you to make sure everything is correct, so you can commit (save) them.</p>
 				</section>
-				<section data-background="images/brushed.png" data-background-repeat="repeat" data-background-size="100px">	
+				<section data-background="images/brushed.png" data-background-repeat="repeat" data-background-size="100px">
 					<p>You're now ready to make your first commit! In the terminal, type:</p>
 					<pre><code>git commit -m "first commit"</code></pre>
 					<p>This commits all of your files to your computer's git repository. The words between the <code>"</code><code>"</code> is your commit message. This tells other people looking at your code what you are doing.</p>
-				</section>	
+				</section>
 				<section data-background="images/brushed.png" data-background-repeat="repeat" data-background-size="100px">							<p>Now, you need to send the code to GitHub, so you can share it and collaborate on it if you want. In the terminal type:</p>
 					<pre><code>git remote add origin https://github.com/yourusername/yournewrepositoryname.git</code></pre>
 					<p>This makes a remote connection to the GitHub repository you've typed. We normally call this 'origin', as it's the original version.</p>
-				</section>	
+				</section>
 				<section data-background="images/brushed.png" data-background-repeat="repeat" data-background-size="100px">
 					<p>Now the two repositories are connected, you need to push your computer's code to GitHub. In the terminal, type:</p>
 					<pre><code>git push -u origin master</code></pre>
 					<p>Your code is now on GitHub! On the GitHub website, open up the repository you created, and admire all your work there.</p>
-				</section>			
+				</section>
 				<section data-background="images/brushed.png" data-background-repeat="repeat" data-background-size="100px">
 					<h2>Congratulations! You've built your basic app.</h2>
 					<p>So, what next?</p>
@@ -634,13 +631,15 @@ gem 'carrierwave'</code></pre>
 					{ src: 'assets/js/classList.js', condition: function() { return !document.body.classList; } },
 					{ src: 'assets/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
 					{ src: 'assets/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: 'assets/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
 					{ src: 'assets/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
 					{ src: 'assets/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
 				]
 			});
 
 		</script>
+
+        // use prism for syntax highlighting
+        <script src="assets/js/prism.js"></script>
 
 	</body>
 </html>
